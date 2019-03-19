@@ -1,7 +1,8 @@
-package com.borysenko.instagrambrowsing
+package com.borysenko.booksbrowsing.ui
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.borysenko.booksbrowsing.R
 
 class MainActivity : AppCompatActivity() {
 
