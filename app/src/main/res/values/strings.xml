@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">InstagramBrowsing</string>
+    <string name="search">Search</string>
+    <string name="book_title">Book Title</string>
+    <string name="title">Title…</string>
+    <string name="book_author">Book Author</string>
+    <string name="author">Author…</string>
+    <string name="go_search">Go Search</string>
 </resources>
