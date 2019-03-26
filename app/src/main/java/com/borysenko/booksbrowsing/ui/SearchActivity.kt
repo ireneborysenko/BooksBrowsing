@@ -1,11 +1,16 @@
 package com.borysenko.booksbrowsing.ui
 
+import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
+import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import com.borysenko.booksbrowsing.R
+import com.borysenko.booksbrowsing.databinding.ActivityBookListBinding
+import com.borysenko.booksbrowsing.viewmodel.BookListViewModel
 import kotlinx.android.synthetic.main.activity_search.*
 
 /**
@@ -15,6 +20,9 @@ import kotlinx.android.synthetic.main.activity_search.*
  * Time: 18:06
  */
 class SearchActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityBookListBinding
+    private lateinit var viewModel: BookListViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +38,12 @@ class SearchActivity : AppCompatActivity() {
             title_edit.clearFocus()
             author_edit.clearFocus()
         }
+
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_book_list)
+        binding.bookList.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+
+        viewModel = ViewModelProviders.of(this).get(BookListViewModel::class.java)
+        binding.viewModel = viewModel
     }
 }
 
