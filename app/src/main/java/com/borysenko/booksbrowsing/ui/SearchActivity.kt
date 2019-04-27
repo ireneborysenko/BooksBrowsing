@@ -45,9 +45,9 @@ class SearchActivity : AppCompatActivity() {
         viewModel = ViewModelProviders.of(this).get(BookListViewModel::class.java)
         binding.viewModel = viewModel
     }
-}
 
-private fun View.hideKeyboard() {
-    val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-    imm.hideSoftInputFromWindow(windowToken, 0)
+    private fun View.hideKeyboard() {
+        val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(windowToken, 0)
+    }
 }
